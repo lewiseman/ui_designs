@@ -35,13 +35,15 @@ class _SpotifyAppState extends State<SpotifyApp> {
   }
 
   void listenToScroll() {
-    _scrollController.addListener(() {
-      double pos = _scrollController.offset;
-      if (pos < 60) {
-        appBarTop = _scrollController.offset * -1;
-        setState(() {});
-      }
-    });
+    _scrollController.addListener(
+      () {
+        double pos = _scrollController.offset;
+        if (pos < 60) {
+          appBarTop = _scrollController.offset * -1;
+          setState(() {});
+        }
+      },
+    );
   }
 
   @override
